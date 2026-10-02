@@ -68,12 +68,12 @@ secrets; the step fails loudly if they are missing or the SVN tag already exists
   (create-or-update rules), `includes/gf/class-feed-addon.php` (GF settings, feeds, `process_feed`).
   The feed add-on is `require`d at `gform_loaded` and excluded from the classmap; keep
   GF-independent logic out of it so PHPUnit (which runs without Gravity Forms) can cover it.
-- Listmonk gotchas the sync relies on (verified against Listmonk source and `npm run test:e2e`):
+- Listmonk gotchas the sync relies on (verified against Listmonk source and `composer run test:e2e`):
   `POST /api/subscribers` answers 409 for an existing e-mail; `PUT /api/subscribers/:id`
   replaces attribs, deletes subscriptions not listed and re-sends pending double opt-in
   e-mails; `PUT /api/subscribers/lists` `action=add` leaves existing subscriptions alone and
   sends no e-mail, so follow it with `POST /api/subscribers/:id/optin`. Auth header is
   `Authorization: token user:key`.
-- `npm test` for the PHPUnit suite, `npm run test:e2e` for the real-Listmonk run (needs
+- `npm test` for the PHPUnit suite, `composer run test:e2e` for the real-Listmonk run (needs
   Gravity Forms in `.wp-env-plugins/`, see README). Gravity Forms is licensed: never commit it.
 - Releases are GitHub only for now (no `Type:` header in `readme.txt`).

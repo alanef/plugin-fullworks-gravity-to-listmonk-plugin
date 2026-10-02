@@ -75,7 +75,7 @@ tested with mocked HTTP.
 ## End-to-end test
 
 ```bash
-npm run test:e2e        # KEEP=1 npm run test:e2e leaves Listmonk up on :9850
+composer run test:e2e        # KEEP=1 composer run test:e2e leaves Listmonk up on :9850
 ```
 
 Needs wp-env running with Gravity Forms active. Starts throwaway Postgres, Listmonk and

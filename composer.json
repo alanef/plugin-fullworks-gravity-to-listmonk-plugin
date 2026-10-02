@@ -52,6 +52,10 @@
       "@compat:7.4",
       "@phpcs"
     ],
-    "test": "npm test"
+    "test": "npm test",
+    "test:e2e": [
+      "Composer\\Config::disableProcessTimeout",
+      "tests/e2e/run.sh"
+    ]
   }
 }

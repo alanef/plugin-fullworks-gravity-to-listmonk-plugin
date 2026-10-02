@@ -12,8 +12,7 @@
     "destroy": "wp-env destroy",
     "test": "./run-tests.sh",
     "test:unit": "./run-tests.sh",
-    "build": "composer run-script build",
-    "test:e2e": "tests/e2e/run.sh"
+    "build": "composer run-script build"
   },
   "devDependencies": {
     "@wordpress/env": "^10.25.0"

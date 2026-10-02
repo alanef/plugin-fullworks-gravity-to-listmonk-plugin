@@ -23,11 +23,11 @@ env:
 jobs:
   checks:
     name: PHPCS, version consistency and Plugin Check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Get required PHP version
         id: php_version
@@ -46,11 +46,24 @@ jobs:
           coverage: none
           tools: composer, wp-cli
 
+      - name: Ensure WP-CLI
+        # setup-php intermittently reports "Could not setup wp-cli" and carries on, so the
+        # build later dies with "wp: command not found". Fetch the phar directly, with
+        # retries, whenever setup-php did not provide it.
+        run: |
+          if command -v wp > /dev/null; then wp --version; exit 0; fi
+          echo "::warning::setup-php did not install WP-CLI - downloading it directly"
+          curl -fsSL --retry 5 --retry-all-errors --retry-delay 3 -o /tmp/wp-cli.phar \
+            https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          php /tmp/wp-cli.phar --version
+          sudo install -m 0755 /tmp/wp-cli.phar /usr/local/bin/wp
+          wp --version
+
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
 
       - name: Cache Composer packages
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: vendor
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
@@ -127,11 +140,11 @@ jobs:
 
   tests:
     name: PHPUnit (wp-env)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Get required PHP version
         id: php_version
@@ -159,7 +172,7 @@ jobs:
           fi
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: npm
