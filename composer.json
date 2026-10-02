@@ -1,6 +1,6 @@
 {
-  "name": "fullworks/plugin-name-project",
-  "description": "Development project for the My Awesome WP Boilerplate WordPress plugin",
+  "name": "fullworks/fullworks-gravity-to-listmonk-project",
+  "description": "Development project for the Fullworks Gravity to Listmonk WordPress plugin",
   "type": "project",
   "license": "GPL-2.0-or-later",
   "authors": [
@@ -29,20 +29,20 @@
       "@plugin-update",
       "@make-pot"
     ],
-    "plugin-update": "if [ -f plugin-name/composer.json ]; then composer update -d plugin-name; fi",
-    "make-pot": "mkdir -p plugin-name/languages && wp i18n make-pot ./plugin-name ./plugin-name/languages/plugin-name.pot --skip-audit --exclude='vendor,includes/vendor,node_modules'",
+    "plugin-update": "if [ -f fullworks-gravity-to-listmonk/composer.json ]; then composer update -d fullworks-gravity-to-listmonk; fi",
+    "make-pot": "mkdir -p fullworks-gravity-to-listmonk/languages && wp i18n make-pot ./fullworks-gravity-to-listmonk ./fullworks-gravity-to-listmonk/languages/fullworks-gravity-to-listmonk.pot --skip-audit --exclude='vendor,includes/vendor,node_modules'",
     "build": [
-      "if [ -f plugin-name/composer.json ]; then composer install -d plugin-name --no-dev; fi",
+      "if [ -f fullworks-gravity-to-listmonk/composer.json ]; then composer install -d fullworks-gravity-to-listmonk --no-dev; fi",
       "mkdir -p zipped",
-      "wp dist-archive plugin-name zipped/plugin-name-free.zip --force"
+      "wp dist-archive fullworks-gravity-to-listmonk zipped/fullworks-gravity-to-listmonk-free.zip --force"
     ],
-    "phpcs": "phpcs plugin-name -s --standard=phpcs_sec.xml --ignore=*/vendor/* --extensions=php",
-    "compat:8.4": "phpcs plugin-name -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 8.4",
-    "compat:8.3": "phpcs plugin-name -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 8.3",
-    "compat:8.2": "phpcs plugin-name -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 8.2",
-    "compat:8.1": "phpcs plugin-name -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 8.1",
-    "compat:8.0": "phpcs plugin-name -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 8.0",
-    "compat:7.4": "phpcs plugin-name -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 7.4",
+    "phpcs": "phpcs fullworks-gravity-to-listmonk -s --standard=phpcs_sec.xml --ignore=*/vendor/* --extensions=php",
+    "compat:8.4": "phpcs fullworks-gravity-to-listmonk -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 8.4",
+    "compat:8.3": "phpcs fullworks-gravity-to-listmonk -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 8.3",
+    "compat:8.2": "phpcs fullworks-gravity-to-listmonk -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 8.2",
+    "compat:8.1": "phpcs fullworks-gravity-to-listmonk -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 8.1",
+    "compat:8.0": "phpcs fullworks-gravity-to-listmonk -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 8.0",
+    "compat:7.4": "phpcs fullworks-gravity-to-listmonk -s --standard=PHPCompatibilityWP --ignore=*/vendor/* --extensions=php --runtime-set testVersion 7.4",
     "check": [
       "@compat:8.4",
       "@compat:8.3",

@@ -3,7 +3,7 @@
     <description>WordPress Plugin Coding Standards</description>
 
     <!-- What to scan -->
-    <file>./plugin-name</file>
+    <file>./fullworks-gravity-to-listmonk</file>
 
     <!-- Exclude patterns -->
     <exclude-pattern>*/node_modules/*</exclude-pattern>
@@ -38,8 +38,8 @@
     <rule ref="WordPress.WP.I18n">
         <properties>
             <property name="text_domain" type="array">
-                <element value="plugin-name"/>
-                <element value="my-awesome-wp-boilerplate"/>
+                <element value="fullworks-gravity-to-listmonk"/>
+                <element value="fullworks-gravity-to-listmonk"/>
             </property>
         </properties>
     </rule>
@@ -47,8 +47,10 @@
     <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
         <properties>
             <property name="prefixes" type="array">
-                <element value="plugin_name"/>
-                <element value="PLUGIN_NAME"/>
+                <element value="fullworks_gravity_to_listmonk"/>
+                <element value="FWGTL"/>
+                <element value="fwgtl"/>
+                <element value="FullworksGTL"/>
             </property>
         </properties>
     </rule>

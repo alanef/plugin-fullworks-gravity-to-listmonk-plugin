@@ -1,8 +1,8 @@
 {
-  "name": "plugin-name-project",
+  "name": "fullworks-gravity-to-listmonk-project",
   "version": "1.0.0",
   "private": true,
-  "description": "Development project for the My Awesome WP Boilerplate WordPress plugin",
+  "description": "Development project for the Fullworks Gravity to Listmonk WordPress plugin",
   "author": "Alan Fuller <alan@fullworks.net>",
   "license": "GPL-2.0-or-later",
   "scripts": {
@@ -12,7 +12,8 @@
     "destroy": "wp-env destroy",
     "test": "./run-tests.sh",
     "test:unit": "./run-tests.sh",
-    "build": "composer run-script build"
+    "build": "composer run-script build",
+    "test:e2e": "tests/e2e/run.sh"
   },
   "devDependencies": {
     "@wordpress/env": "^10.25.0"

@@ -8,7 +8,7 @@
 
 class Test_Plugin_Load extends WP_UnitTestCase {
 
-	const PLUGIN_FILE = '__PLUGIN_DIR__/__MAIN_FILE__';
+	const PLUGIN_FILE = 'fullworks-gravity-to-listmonk/fullworks-gravity-to-listmonk.php';
 
 	public function test_plugin_file_is_loaded() {
 		$this->assertContains( WP_PLUGIN_DIR . '/' . self::PLUGIN_FILE, get_included_files() );

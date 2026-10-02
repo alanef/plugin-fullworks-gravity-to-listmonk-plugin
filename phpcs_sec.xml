@@ -5,7 +5,7 @@
     <description>WordPress Security Rules for Plugin</description>
 
     <!-- What to scan -->
-    <file>./plugin-name</file>
+    <file>./fullworks-gravity-to-listmonk</file>
     
     <!-- Only scan PHP files -->
     <arg name="extensions" value="php"/>

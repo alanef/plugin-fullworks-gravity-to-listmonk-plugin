@@ -1,6 +1,6 @@
 {
-    "name": "fullworks/plugin-name",
-    "description": "Plugin Name description",
+    "name": "fullworks/fullworks-gravity-to-listmonk",
+    "description": "Gravity Forms feed add-on that adds submitters to Listmonk lists.",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
     "require": {
@@ -8,7 +8,10 @@
     },
     "autoload": {
         "classmap": [
-            "."
+            "includes/"
+        ],
+        "exclude-from-classmap": [
+            "includes/gf/class-feed-addon.php"
         ]
     },
     "config": {

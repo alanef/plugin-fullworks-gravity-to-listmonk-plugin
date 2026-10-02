@@ -8,9 +8,9 @@ zipped/
 tmp-build/
 node_modules/
 /vendor/
-/plugin-name/vendor/
-/plugin-name/composer.lock
-/plugin-name/includes/vendor/
+/fullworks-gravity-to-listmonk/vendor/
+/fullworks-gravity-to-listmonk/composer.lock
+/fullworks-gravity-to-listmonk/includes/vendor/
 .phpunit.result.cache
 *.phpunit.result.cache
 .wp-env.override.json
@@ -52,3 +52,4 @@ wp-content/wp-cache-config.php
 .htaccess
 sitemap.xml
 sitemap.xml.gz
+/.wp-env-plugins/

@@ -34,9 +34,9 @@ Search for any remaining template names that should have been replaced:
 
 ```bash
 # These should return NO results (except in documentation/comments)
-grep -r "plugin-name" ./your-plugin/ --exclude-dir=vendor
-grep -r "plugin_name" ./your-plugin/ --exclude-dir=vendor
-grep -r "PLUGIN_NAME" ./your-plugin/ --exclude-dir=vendor
+grep -r "fullworks-gravity-to-listmonk" ./your-plugin/ --exclude-dir=vendor
+grep -r "fullworks_gravity_to_listmonk" ./your-plugin/ --exclude-dir=vendor
+grep -r "FWGTL" ./your-plugin/ --exclude-dir=vendor
 ```
 
 ### 4. Text Domain Verification (REQUIRED)
@@ -83,7 +83,7 @@ Plugin should activate without errors.
 ```php
 <?php
 /**
- * Plugin Name:       My Plugin Name
+ * Fullworks Gravity to Listmonk:       My Fullworks Gravity to Listmonk
  * Plugin URI:        https://example.com/plugins/my-plugin/
  * Description:       Brief description of what the plugin does.
  * Version:           1.0.0
@@ -401,7 +401,7 @@ $wpdb->insert(
 - Any trademarked names
 
 **Acceptable:**
-- "WP Plugin Name" instead of "WordPress Plugin Name"
+- "WP Fullworks Gravity to Listmonk" instead of "WordPress Fullworks Gravity to Listmonk"
 - "Integration for WooCommerce" instead of "WooCommerce Extension"
 
 ### 10. File Organization
@@ -589,7 +589,7 @@ Before submission, ensure:
 ```php
 <?php
 /**
- * Plugin Name:       My Awesome Plugin
+ * Fullworks Gravity to Listmonk:       My Awesome Plugin
  * Plugin URI:        https://example.com/plugins/my-awesome-plugin/
  * Description:       Does awesome things the WordPress way.
  * Version:           1.0.0

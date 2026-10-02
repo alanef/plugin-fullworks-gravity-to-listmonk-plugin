@@ -9,15 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `run-tests.sh` now runs a plugin's pure unit suite on the host, with no WordPress loaded, when `tests/phpunit-unit.xml.dist` exists. Such a suite stubs `wp_remote_post()` and friends behind `function_exists()`; run under the wp-env bootstrap the real WordPress functions already exist, so the stubs never install and the tests issue live HTTP. They then fail as though the product were broken. Pair it with `"phpunit_exclude": ["unit"]` in `.tooling.json` so the wp-env suite does not run them a second time.
-- `wp-env start` in the PHPUnit job now retries up to three times, stopping between attempts so a half-started environment does not poison the next try, and fails loudly with an annotation if all three fail. It flakes intermittently on container and network timing, and a flake previously read as a test failure. The fix existed in the boilerplate's own CI but had never reached the template, so no plugin had it.
-- Plugin Check now runs on `develop` as well as the repository's default branch. Work lands on `develop`, so a check wired only to the default branch reported nothing until merge time, which is exactly when it is least useful. The generated workflow takes a `__BRANCH_LIST__` block instead of a single `__BRANCH__`, deduped so a repo whose default already is `develop` gets one entry rather than two.
-
-### Fixed
-
-- Plugin Check now lists the built zip's contents and deletes any `.wp-env.override.json` before starting wp-env. A committed override with a `plugins` entry mounts the source directory over the build mapping, so Plugin Check inspected the repository (reporting `.distignore` as a hidden file) instead of the zip.
-- `bin/sync-tooling.sh` no longer resets a plugin repo's `package.json` version or downgrades a dev dependency the repo has already moved past (e.g. `@wordpress/env` 11).
-
-## [1.0.0]
-
-- Baseline. Earlier history is in `plugin-name/readme.txt`.
+- Gravity Forms add-on settings (Forms → Settings → Listmonk) for the Listmonk URL, API user and API key, with a live connection check that lists how many lists the API user can see. A pasted `/admin` or `/api` URL is trimmed to the Listmonk root.
+- Per-form Listmonk feeds: choose one or more lists, map the e-mail and name fields, map any form field or merge-tag value to Listmonk subscriber attributes, and gate the feed with Gravity Forms conditional logic.
+- Per-feed "Skip double opt-in" option for forms that already record consent; otherwise Listmonk sends its own confirmation e-mail for double opt-in lists.
+- Existing subscribers are handled without collateral damage. Listmonk's `PUT /api/subscribers/:id` replaces all attributes, drops every list not named in the request and re-sends pending opt-in e-mails, so it is not used to add lists. Instead only the lists the subscriber is missing are added, an earlier unsubscribe is left in place, blocklisted addresses are not touched, and a newly added double opt-in list gets its confirmation e-mail.
+- Per-feed "Update name and attributes of existing subscribers" option, off by default. Attributes are merged into the existing ones and all current lists are kept; the update is skipped (and the entry note says why) when it would re-send a confirmation e-mail the subscriber has already been sent.
+- An entry note on every submission saying what happened in Listmonk, the Listmonk subscriber ID stored in entry meta, and feed errors reported through Gravity Forms' standard feed-error handling. A Listmonk failure never blocks the form.
+- `fwgtl_subscriber` filter, `fwgtl_after_subscribe` action and `fwgtl_http_args` filter for customisation.
+- Suggested privacy-policy text describing the data sent to Listmonk.

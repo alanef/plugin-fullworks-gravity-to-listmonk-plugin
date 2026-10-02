@@ -11,7 +11,7 @@
     convertWarningsToExceptions="true"
     >
     <testsuites>
-        <testsuite name="My Awesome WP Boilerplate Test Suite">
+        <testsuite name="Fullworks Gravity to Listmonk Test Suite">
             <!-- Either naming convention: tests/test-foo.php or tests/**/FooTest.php -->
             <directory prefix="test-" suffix=".php">./tests</directory>
             <directory suffix="Test.php">./tests</directory>
@@ -19,12 +19,12 @@
     </testsuites>
     <coverage processUncoveredFiles="true">
         <include>
-            <directory suffix=".php">./plugin-name</directory>
+            <directory suffix=".php">./fullworks-gravity-to-listmonk</directory>
         </include>
         <exclude>
-            <directory>./plugin-name/vendor</directory>
-            <directory>./plugin-name/includes/vendor</directory>
-            <directory>./plugin-name/languages</directory>
+            <directory>./fullworks-gravity-to-listmonk/vendor</directory>
+            <directory>./fullworks-gravity-to-listmonk/includes/vendor</directory>
+            <directory>./fullworks-gravity-to-listmonk/languages</directory>
         </exclude>
     </coverage>
 </phpunit>

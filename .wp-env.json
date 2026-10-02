@@ -1,10 +1,10 @@
 {
   "phpVersion": "8.4",
   "plugins": [
-    "./plugin-name"
+    "./fullworks-gravity-to-listmonk"
   ],
-  "port": 8810,
-  "testsPort": 8811,
+  "port": 8850,
+  "testsPort": 8851,
   "config": {
     "WP_DEBUG": true,
     "WP_DEBUG_LOG": true,
