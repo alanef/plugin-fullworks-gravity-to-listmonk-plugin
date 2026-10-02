@@ -3,7 +3,7 @@
  * Plugin Name:       Fullworks Gravity to Listmonk
  * Plugin URI:        https://github.com/alanef/plugin-fullworks-gravity-to-listmonk-plugin
  * Description:       Adds Gravity Forms submitters to Listmonk mailing lists, with per-form feeds, field mapping and conditional logic.
- * Version:           1.0.0-alpha.1
+ * Version:           1.0.0
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Fullworks
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'FWGTL_VERSION', '1.0.0-alpha.1' );
+define( 'FWGTL_VERSION', '1.0.0' );
 define( 'FWGTL_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FWGTL_URL', plugin_dir_url( __FILE__ ) );
 define( 'FWGTL_BASENAME', plugin_basename( __FILE__ ) );

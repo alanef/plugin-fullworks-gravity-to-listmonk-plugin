@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-02
+
 ### Added
 
 - Gravity Forms add-on settings (Forms → Settings → Listmonk) for the Listmonk URL, API user and API key, with a live connection check that lists how many lists the API user can see. A pasted `/admin` or `/api` URL is trimmed to the Listmonk root.
