@@ -3,9 +3,10 @@
  * Plugin Name:       Fullworks Gravity to Listmonk
  * Plugin URI:        https://github.com/alanef/plugin-fullworks-gravity-to-listmonk-plugin
  * Description:       Adds Gravity Forms submitters to Listmonk mailing lists, with per-form feeds, field mapping and conditional logic.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 5.8
  * Requires PHP:      7.4
+ * Update URI:        https://github.com/alanef/plugin-fullworks-gravity-to-listmonk-plugin
  * Author:            Fullworks
  * Author URI:        https://fullworks.net/
  * License:           GPL v2 or later
@@ -24,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'FWGTL_VERSION', '1.0.0' );
+define( 'FWGTL_VERSION', '1.1.0' );
 define( 'FWGTL_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FWGTL_URL', plugin_dir_url( __FILE__ ) );
 define( 'FWGTL_BASENAME', plugin_basename( __FILE__ ) );
@@ -50,3 +51,9 @@ add_action( 'plugins_loaded', array( 'FullworksGTL\\Plugin', 'register' ) );
  * plugins_loaded callback can miss the action entirely.
  */
 add_action( 'gform_loaded', array( 'FullworksGTL\\GF\\Bootstrap', 'load_addon' ), 5 );
+
+// Self-update from GitHub releases. Managed by wordpress-plugin-boilerplate/tooling: present only
+// while readme.txt has no Type: header (GitHub-only release).
+if ( file_exists( __DIR__ . '/includes/class-github-updater.php' ) ) {
+	require_once __DIR__ . '/includes/class-github-updater.php';
+}

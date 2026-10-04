@@ -3,7 +3,7 @@ Contributors: fullworks, alanfuller
 Tags: gravity forms, listmonk, newsletter, mailing list, subscribers
 Requires at least: 5.8
 Tested up to: 7.1
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -48,6 +48,10 @@ They are added to any of the feed's lists they are not already on. Their other l
 = Why was an existing subscriber's name not updated? =
 
 When the subscriber still has an unconfirmed double opt-in subscription, Listmonk would re-send the confirmation e-mail on any update, so the update is skipped and the entry note says so.
+
+= How do I get updates? =
+
+The plugin is distributed from GitHub, not WordPress.org, and updates itself from its GitHub releases. New versions appear on the Plugins and Dashboard → Updates screens like any other plugin; "Check again" on Dashboard → Updates looks immediately.
 
 = Does this send data to a third party? =
 

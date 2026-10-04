@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-04
+
+### Added
+
+- The plugin now updates itself from this repository's GitHub releases through WordPress's normal update screens, since it is not on WordPress.org. It uses the `Update URI` header (WordPress 5.8+), finds the latest release from the github.com redirect rather than the GitHub API (no token, no rate limit), installs the release zip into the folder the plugin already lives in, and caches the lookup for 6 hours (1 hour after a failure) so an unreachable GitHub never slows the admin. "Check again" on Dashboard → Updates refreshes it.
+
 ## [1.0.0] - 2026-10-02
 
 ### Added
